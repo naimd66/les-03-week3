@@ -10,6 +10,6 @@ resource "local_file" "ansible_inventory" {
 
 [all:vars]
 ansible_user=iac
-ansible_ssh_private_key_file=~/.ssh/skylab
+ansible_ssh_private_key_file=~/home/student/skylab
 EOT
 }
