@@ -1,0 +1,19 @@
+- name: Install nginx on web servers
+  hosts: web
+  become: yes
+  tasks:
+    - name: Install nginx
+      apt:
+        name: nginx
+        state: present
+        update_cache: yes
+
+- name: Install mariadb on db servers
+  hosts: db
+  become: yes
+  tasks:
+    - name: Install mariadb-server
+      apt:
+        name: mariadb-server
+        state: present
+        update_cache: yes

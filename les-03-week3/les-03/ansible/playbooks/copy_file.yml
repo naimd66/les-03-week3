@@ -1,0 +1,11 @@
+- name: Copy file to VM
+  hosts: all
+  become: yes
+  tasks:
+    - name: Copy local file
+      copy:
+        src: ./testfile.txt
+        dest: /home/iac/testfile.txt
+        owner: iac
+        group: iac
+        mode: '0644'

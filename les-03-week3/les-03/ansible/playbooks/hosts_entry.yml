@@ -1,0 +1,9 @@
+- name: Add ESXi host to /etc/hosts
+  hosts: all
+  become: yes
+  tasks:
+    - name: Add host entry
+      lineinfile:
+        path: /etc/hosts
+        line: "192.168.100.2 esxi"
+        state: present

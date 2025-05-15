@@ -1,0 +1,18 @@
+- name: Setup backup for /etc and /var/www
+  hosts: all
+  become: yes
+  tasks:
+    - name: Create backup script
+      copy:
+        dest: /usr/local/bin/backup.sh
+        mode: '0755'
+        content: |
+          #!/bin/bash
+          tar -czf /tmp/backup_$(date +%F).tar.gz /etc /var/www
+
+    - name: Add cronjob
+      cron:
+        name: "Daily backup"
+        job: "/usr/local/bin/backup.sh"
+        minute: 0
+        hour: 1
