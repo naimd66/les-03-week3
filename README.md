@@ -89,5 +89,4 @@ Samenvatting
 Terraform & Ansible correct gekoppeld
 Gebruik van handlers, rollen en variabelen
 Configuratie volledig geautomatiseerd
-
-✅ README bevat uitleg + instructies
+README bevat uitleg + instructies
